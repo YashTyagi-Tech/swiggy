@@ -1,0 +1,904 @@
+/* ------------------------------
+   Basic styles
+------------------------------ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #202124;
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+.content-width {
+    width: min(1550px, calc(100% - 80px));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ------------------------------
+   Header
+------------------------------ */
+
+.site-header {
+    height: 120px;
+    padding: 0 max(calc((100% - 1550px) / 2), 40px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ff5200;
+    color: #fff;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.logo-mark {
+    width: 46px;
+    height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: #fff;
+    color: #ff5200;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.app-link {
+    padding: 15px 20px;
+    border: 1px solid #fff;
+    border-radius: 13px;
+}
+
+.app-link span {
+    margin-left: 6px;
+    font-size: 19px;
+}
+
+.sign-in {
+    min-width: 136px;
+    padding: 16px 25px;
+    border-radius: 15px;
+    background: #000;
+    text-align: center;
+}
+
+.menu-button {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font-size: 25px;
+}
+
+
+/* ------------------------------
+   Orange hero section
+------------------------------ */
+
+.hero {
+    min-height: 830px;
+    position: relative;
+    overflow: hidden;
+    padding: 50px 20px 45px;
+    background: #ff5200;
+    color: #fff;
+}
+
+.hero-content {
+    width: min(1450px, 100%);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    margin: 10px 0 25px;
+    text-align: center;
+    font-size: clamp(34px, 3.1vw, 48px);
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -1.2px;
+}
+
+.hero-decoration {
+    width: 210px;
+    height: 390px;
+    position: absolute;
+    top: 75px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .95;
+    pointer-events: none;
+}
+
+.hero-left {
+    left: 0;
+    background-image: url("assets/food-delivery-card.jpg");
+    background-position: right center;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 72%);
+    opacity: 0;
+}
+
+.hero-right {
+    right: 0;
+    background-image: url("assets/dineout-card.jpg");
+    background-position: left center;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 72%);
+    opacity: 0;
+}
+
+.search-row {
+    width: min(825px, 100%);
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 16px;
+    margin: 0 auto 55px;
+}
+
+.location-box,
+.search-box {
+    height: 61px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 0 17px;
+    border-radius: 15px;
+    background: #fff;
+    color: #777;
+}
+
+.location-box svg {
+    width: 23px;
+    height: 23px;
+    flex: none;
+    fill: none;
+    stroke: #ff5200;
+    stroke-width: 3;
+}
+
+.search-box svg {
+    width: 20px;
+    height: 20px;
+    flex: none;
+    fill: none;
+    stroke: #777;
+    stroke-width: 1.8;
+}
+
+.location-box input,
+.search-box input {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    color: #333;
+    background: transparent;
+    font-size: 14px;
+}
+
+.location-box input::placeholder,
+.search-box input::placeholder {
+    color: #858585;
+}
+
+.down-arrow {
+    color: #222;
+    font-size: 24px;
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 55px;
+}
+
+.service-card {
+    display: block;
+    overflow: hidden;
+    border-radius: 40px;
+    box-shadow: 0 12px 25px rgba(120, 40, 0, .12);
+}
+
+.service-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform .2s ease;
+}
+
+.service-card:hover img {
+    transform: translateY(-4px);
+}
+
+
+/* ------------------------------
+   Food categories
+------------------------------ */
+
+.food-section {
+    padding-top: 90px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.section-heading h2,
+.cities h2 {
+    font-size: 22px;
+    font-weight: 750;
+    letter-spacing: -.4px;
+}
+
+.slider-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.slider-buttons button {
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 50%;
+    background: #eeeeef;
+    color: #333;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.slider-buttons button:hover {
+    background: #ddd;
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+    gap: 28px 18px;
+}
+
+.food-grid a {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #333;
+    text-align: center;
+    font-size: 17px;
+}
+
+.food-grid img {
+    width: 100%;
+    max-width: 145px;
+    aspect-ratio: 1;
+    object-fit: contain;
+    display: block;
+}
+
+.food-grid a:hover {
+    color: #ff5200;
+}
+
+
+/* ------------------------------
+   Restaurant cards
+------------------------------ */
+
+.restaurant-section {
+    padding-top: 105px;
+}
+
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.restaurant-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #e9e9e9;
+    border-radius: 17px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .04);
+}
+
+.restaurant-photo {
+    height: 190px;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+}
+
+.restaurant-photo::after {
+    content: "";
+    position: absolute;
+    inset: 35% 0 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, .75));
+}
+
+.restaurant-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform .25s ease;
+}
+
+.restaurant-card:hover .restaurant-photo img {
+    transform: scale(1.04);
+}
+
+.restaurant-photo strong,
+.restaurant-photo span {
+    position: absolute;
+    z-index: 1;
+    bottom: 12px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.restaurant-photo strong {
+    left: 12px;
+}
+
+.restaurant-photo span {
+    right: 12px;
+    color: #fff;
+}
+
+.restaurant-info {
+    padding: 12px;
+    font-size: 11px;
+    color: #777;
+}
+
+.restaurant-info > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.restaurant-info > div span:last-child {
+    white-space: nowrap;
+}
+
+.offer,
+.bank-offer {
+    margin-top: 11px;
+    padding: 10px 9px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.offer {
+    background: #20a875;
+    color: #fff;
+    font-weight: 700;
+}
+
+.offer b {
+    float: right;
+}
+
+.bank-offer {
+    background: #c8f8e8;
+    color: #16a477;
+}
+
+.restaurant-info small {
+    display: block;
+    margin-top: 10px;
+    color: #6544d6;
+    font-size: 10px;
+}
+
+
+/* ------------------------------
+   App download banner
+------------------------------ */
+
+.app-banner {
+    margin-top: 80px;
+}
+
+.app-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* ------------------------------
+   Cities section
+------------------------------ */
+
+.cities {
+    padding-top: 85px;
+    padding-bottom: 80px;
+}
+
+.cities h2 {
+    margin-bottom: 16px;
+}
+
+.city-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.city-grid a,
+.city-grid button {
+    min-height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #dedede;
+    border-radius: 13px;
+    background: #fff;
+    color: #343434;
+    font-size: 13px;
+    text-align: center;
+}
+
+.city-grid button {
+    gap: 10px;
+    color: #ff5200;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.extra-city {
+    display: none !important;
+}
+
+.extra-city.show {
+    display: flex !important;
+}
+
+
+/* ------------------------------
+   Footer
+------------------------------ */
+
+.site-footer {
+    padding: 55px 0 25px;
+    background: #f0f0f5;
+}
+
+.footer-inner {
+    width: min(1450px, calc(100% - 80px));
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+    gap: 35px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    color: #ff5200;
+    font-size: 25px;
+}
+
+.footer-logo .logo-mark {
+    width: 48px;
+    height: 48px;
+    background: #ff5200;
+    color: #fff;
+}
+
+.footer-brand p {
+    margin-top: 12px;
+    color: #6b6b75;
+    font-size: 13px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.footer-column h3 {
+    margin-bottom: 2px;
+    color: #161616;
+    font-size: 16px;
+}
+
+.footer-column a {
+    color: #62626b;
+    font-size: 14px;
+}
+
+.footer-column a:hover {
+    color: #ff5200;
+}
+
+.footer-column .legal-title,
+.footer-column .social-title {
+    margin-top: 28px;
+}
+
+.footer-column select {
+    padding: 7px 12px;
+    border: 1px solid #d1d1d8;
+    border-radius: 8px;
+    background: transparent;
+    color: #666;
+    font-size: 12px;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.social-icons a {
+    width: 18px;
+    height: 18px;
+    color: #45454d;
+}
+
+.social-icons svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.footer-app {
+    width: min(1750px, calc(100% - 80px));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin: 50px auto 0;
+    padding-top: 28px;
+    border-top: 1px solid #bdbdc4;
+    color: #4b4b53;
+    font-size: 20px;
+}
+
+.app-store,
+.play-store {
+    min-width: 185px;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 6px 12px;
+    border: 1px solid #aaa;
+    border-radius: 9px;
+    background: #050505;
+    color: #fff;
+    font-size: 28px;
+}
+
+.app-store span,
+.play-store span {
+    font-size: 10px;
+    line-height: 13px;
+}
+
+.app-store b,
+.play-store b {
+    font-size: 19px;
+}
+
+
+/* ------------------------------
+   Tablet layout
+------------------------------ */
+
+@media (max-width: 1100px) {
+    .site-header {
+        height: 95px;
+        padding: 0 35px;
+    }
+
+    .main-nav {
+        gap: 18px;
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .service-cards {
+        gap: 25px;
+    }
+
+    .food-grid {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+    .restaurant-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .footer-inner {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+
+/* ------------------------------
+   Mobile layout
+------------------------------ */
+
+@media (max-width: 700px) {
+    .content-width {
+        width: calc(100% - 32px);
+    }
+
+    .site-header {
+        height: 75px;
+        padding: 0 18px;
+    }
+
+    .logo {
+        gap: 8px;
+        font-size: 23px;
+    }
+
+    .logo-mark {
+        width: 39px;
+        height: 39px;
+        font-size: 21px;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 38px 16px 35px;
+    }
+
+    .hero h1 {
+        margin: 8px 0 24px;
+        font-size: clamp(27px, 7vw, 38px);
+        letter-spacing: -.7px;
+    }
+
+    .desktop-break {
+        display: none;
+    }
+
+    .search-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    .location-box,
+    .search-box {
+        height: 52px;
+        border-radius: 11px;
+    }
+
+    .service-cards {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        max-width: 390px;
+        margin: 0 auto;
+    }
+
+    .service-card {
+        border-radius: 25px;
+    }
+
+    .food-section {
+        padding-top: 48px;
+    }
+
+    .section-heading {
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .section-heading h2,
+    .cities h2 {
+        font-size: 18px;
+    }
+
+    .slider-buttons {
+        gap: 6px;
+    }
+
+    .slider-buttons button {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    .food-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px 12px;
+    }
+
+    .food-grid img {
+        max-width: 115px;
+    }
+
+    .food-grid a {
+        gap: 5px;
+        font-size: 13px;
+    }
+
+    .restaurant-section {
+        padding-top: 55px;
+    }
+
+    .restaurant-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .restaurant-photo {
+        height: 145px;
+    }
+
+    .restaurant-photo strong,
+    .restaurant-photo span {
+        font-size: 11px;
+    }
+
+    .restaurant-info {
+        padding: 9px;
+        font-size: 9px;
+    }
+
+    .offer,
+    .bank-offer {
+        padding: 8px 6px;
+        font-size: 10px;
+    }
+
+    .app-banner {
+        margin-top: 45px;
+    }
+
+    .cities {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .city-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+    }
+
+    .city-grid a,
+    .city-grid button {
+        min-height: 48px;
+        font-size: 11px;
+    }
+
+    .site-footer {
+        padding-top: 38px;
+    }
+
+    .footer-inner {
+        width: calc(100% - 36px);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 18px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-column {
+        gap: 12px;
+    }
+
+    .footer-column h3 {
+        font-size: 14px;
+    }
+
+    .footer-column a {
+        font-size: 12px;
+    }
+
+    .footer-app {
+        width: calc(100% - 36px);
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 35px;
+        padding-top: 25px;
+        text-align: center;
+    }
+
+    .footer-app strong {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .app-store,
+    .play-store {
+        min-width: 135px;
+        min-height: 45px;
+        font-size: 22px;
+    }
+
+    .app-store b,
+    .play-store b {
+        font-size: 15px;
+    }
+}
+
+
+/* Very small phones */
+
+@media (max-width: 380px) {
+    .site-header {
+        padding: 0 12px;
+    }
+
+    .hero {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .food-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .restaurant-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .restaurant-photo {
+        height: 190px;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr 1fr;
+    }
+}
